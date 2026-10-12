@@ -1,4 +1,68 @@
 <!doctype html>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="nav shell" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="Bloom Medical home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M18 29V14m0 8c-7 0-11-4-11-11 7 0 11 4 11 11Zm0-5c0-7 4-11 11-11 0 7-4 11-11 11Z"/></svg></span><span class="brand-copy"><strong>Bloom Medical</strong><small>Care That Grows With You.</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-links" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="primary-links"><a href="index.html">Home</a><a href="aboutus.html" aria-current="page">About</a><a href="appointments.html">Appointments</a><a href="analytics.html">Analytics</a><a class="button button-small" href="appointments.html">Manage appointments <span aria-hidden="true">↗</span></a></div>
+  </nav></header>
+
+
+  <main id="main">
+    <section class="page-hero shell">
+      <div><p class="eyebrow">The person behind the project</p><h1>Curious by nature.<br><em>Building with purpose.</em></h1><p class="hero-lede">Bloom Medical is a fictional clinic. This page is about the real student developer creating its digital experience.</p></div>
+      <div class="page-hero-art about-art" aria-hidden="true"><span class="about-monogram">B<span>✳</span></span><span class="about-orbit"></span><p>Learning, designing<br>& growing</p></div>
+    </section>
+
+
+    <section class="section shell about-layout">
+      <aside class="profile-card">
+        <span class="profile-flower" aria-hidden="true">✳</span>
+        <p class="eyebrow">Student developer</p>
+        <h2>Lisandra Kennell</h2>
+        <p class="profile-edit-note">Technology professional · USF graduate student</p>
+        <div class="profile-tags"><span>USF graduate student</span><span>AI + Business Analytics</span></div>
+        <a class="button button-outline profile-github" href="https://github.com/LiliUSF/Bloom-Medical" target="_blank" rel="noopener noreferrer">View the source on GitHub <span aria-hidden="true">↗</span></a>
+      </aside>
+      <div class="about-story">
+        <p class="eyebrow">A little about me</p>
+        <h2>Technology is most meaningful when it <em>helps people.</em></h2>
+        <p>I am Lisandra Kennell, a technology professional with experience in software development, database engineering, and technology. I value thoughtful problem-solving and building practical digital experiences that make information easier to understand and use.</p>
+        <p>I am pursuing graduate studies in Artificial Intelligence and Business Analytics at the University of South Florida (USF). My studies bring together technology and data, complementing my professional background and interest in useful, human-centered digital tools.</p>
+        <div class="experience-note"><span aria-hidden="true">✳</span><p><strong>Thoughtful technology, grounded in people.</strong> This project reflects my interest in combining clear communication, reliable information, and approachable software in a calm digital experience.</p></div>
+      </div>
+    </section>
+
+
+    <section class="build-section">
+      <div class="shell section">
+        <div class="section-title-row"><div><p class="eyebrow">Behind the build</p><h2>Made simply,<br><em>with intention.</em></h2></div><p>This assignment is a static, browser-based prototype—not a live clinic platform.</p></div>
+        <div class="build-grid">
+          <article class="build-card"><span class="build-number">01</span><h3>Designed with HTML & CSS</h3><p>Semantic HTML organizes four connected pages. A shared CSS file provides the responsive layouts, design system, accessible focus states, and mobile navigation styling.</p><span class="tech-pill">HTML5</span><span class="tech-pill">CSS3</span></article>
+          <article class="build-card"><span class="build-number">02</span><h3>Interactions in JavaScript</h3><p>Vanilla JavaScript powers the appointment form, client-side validation, search and filters, CRUD actions, and a localStorage-backed fictional dataset.</p><span class="tech-pill">Vanilla JavaScript</span><span class="tech-pill">localStorage</span></article>
+          <article class="build-card"><span class="build-number">03</span><h3>Charts with Chart.js</h3><p>The analytics page loads Chart.js from its public CDN to render responsive department, monthly trend, and appointment status charts using the same sample records.</p><span class="tech-pill">Chart.js CDN</span><span class="tech-pill">Fictional data</span></article>
+        </div>
+        <div class="privacy-note"><span class="privacy-icon" aria-hidden="true">✳</span><p><strong>Demo, not a medical system.</strong> No backend or database is connected. Appointment examples stay in this browser only. Do not enter real patient information.</p></div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer"><div class="shell footer-main">
+    <a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M18 29V14m0 8c-7 0-11-4-11-11 7 0 11 4 11 11Zm0-5c0-7 4-11 11-11 0 7-4 11-11 11Z"/></svg></span><span class="brand-copy"><strong>Bloom Medical</strong><small>Care That Grows With You.</small></span></a>
+    <p>A fictional clinic website created for an academic assignment.<br>Demonstration only — not medical advice or a real care provider.</p>
+    <div class="footer-nav"><a href="aboutus.html">About this project</a><a href="appointments.html">Appointment demo</a><a href="analytics.html">Sample analytics</a></div>
+  </div><div class="shell footer-bottom"><span>© <span data-current-year>2026</span> Bloom Medical · Academic demonstration</span><span>Made with care, for learning.</span></div></footer>
+</body>
+</html>
+
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
