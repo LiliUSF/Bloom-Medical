@@ -98,7 +98,7 @@
     emptyState.hidden = filtered.length > 0;
     document.querySelector("#result-count").textContent = `Showing ${filtered.length} of ${appointments.length} appointments`;
     document.querySelector("#metric-total").textContent = String(appointments.length);
-    document.querySelector("#metric-upcoming").textContent = String(appointments.filter((appointment) => appointment.date >= new Date().toISOString().slice(0, 10) && appointment.status !== "Cancelled").length);
+    document.querySelector("#metric-upcoming").textContent = String(appointments.filter((appointment) => appointment.date >= window.BloomMedical.today() && appointment.status !== "Cancelled").length);
     document.querySelector("#metric-departments").textContent = String(new Set(appointments.map((appointment) => appointment.department)).size);
   }
 
