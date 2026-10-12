@@ -4,7 +4,7 @@ A static, fictional medical-clinic website created for ISM 6225, Assignment 1 �
 
 ## Pages
 
-- `index.html` — clinic introduction, services, fictional sample statistics, and location/hours placeholders.
+- `index.html` — clinic introduction, services, fictional sample statistics, and fictional location and hours.
 - `aboutus.html` — student developer profile for Lisandra Kennell and implementation notes.
 - `appointments.html` — mock appointment create, read, update, and delete flows. Examples are stored in this browser's localStorage.
 - `analytics.html` — Chart.js charts based on the browser's fictional appointment records.
