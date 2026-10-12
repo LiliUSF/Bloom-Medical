@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f0">
+  <meta name="description" content="Explore fictional appointment trends and sample clinic analytics for the Bloom Medical academic demo.">
+  <title>Sample Analytics | Bloom Medical</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js" defer></script>
+  <script src="analytics.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="nav shell" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="Bloom Medical home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M18 29V14m0 8c-7 0-11-4-11-11 7 0 11 4 11 11Zm0-5c0-7 4-11 11-11 0 7-4 11-11 11Z"/></svg></span><span class="brand-copy"><strong>Bloom Medical</strong><small>Care That Grows With You.</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-links" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="primary-links"><a href="index.html">Home</a><a href="aboutus.html">About</a><a href="appointments.html">Appointments</a><a href="analytics.html" aria-current="page">Analytics</a><a class="button button-small" href="appointments.html">Manage appointments <span aria-hidden="true">↗</span></a></div>
+  </nav></header>
+  <main id="main" class="dashboard-main shell analytics-main">
+    <section class="dashboard-heading"><div><p class="eyebrow">Bloom Medical · Fictional insights</p><h1>Small details,<br><em>clearer picture.</em></h1><p>Sample appointment activity, made easier to explore.</p></div><a class="button button-outline" href="appointments.html">Manage demo records <span aria-hidden="true">↗</span></a></section>
+    <div class="demo-alert" role="note"><span class="alert-mark" aria-hidden="true">!</span><p><strong>Fictional sample data only.</strong><br>Charts use local demo appointments saved in this browser. Nothing here represents real people or clinic performance.</p></div>
+    <section class="analytics-summary" aria-label="Demo analytics summary">
+      <article class="analytics-stat"><span class="analytics-stat-icon">✳</span><span>Total appointments</span><strong id="analytics-total">—</strong><small>Fictional records</small></article>
+      <article class="analytics-stat"><span class="analytics-stat-icon">◷</span><span>Upcoming</span><strong id="analytics-upcoming">—</strong><small>Not cancelled</small></article>
+      <article class="analytics-stat"><span class="analytics-stat-icon">♡</span><span>Completed</span><strong id="analytics-completed">—</strong><small>Sample visits</small></article>
+      <article class="analytics-stat"><span class="analytics-stat-icon">✿</span><span>Departments</span><strong id="analytics-departments">—</strong><small>With demo activity</small></article>
+    </section>
+    <p class="analytics-error" id="analytics-error" role="alert" hidden></p>
+    <section class="chart-grid" aria-label="Fictional appointment charts">
+      <article class="chart-card chart-wide"><div class="chart-heading"><div><p class="eyebrow">Appointments over time</p><h2>Monthly appointment trends</h2></div><span class="chart-period">Last 6 months</span></div><div class="chart-area chart-area-line"><canvas id="trend-chart" role="img" aria-label="Line chart of fictional appointments per month for the last six months">Monthly appointments trend chart.</canvas></div><p class="chart-insight" id="trend-insight">The monthly view helps spot changes in activity over time.</p></article>
+      <article class="chart-card"><div class="chart-heading"><div><p class="eyebrow">Care mix</p><h2>Appointments by department</h2></div></div><div class="chart-area chart-area-doughnut"><canvas id="department-chart" role="img" aria-label="Doughnut chart showing fictional appointments by department">Appointments by department chart.</canvas></div><p class="chart-insight">This view shows how the sample appointments are distributed across care teams.</p></article>
+      <article class="chart-card"><div class="chart-heading"><div><p class="eyebrow">Schedule pulse</p><h2>Appointment status</h2></div></div><div class="chart-area chart-area-bar"><canvas id="status-chart" role="img" aria-label="Bar chart showing fictional appointments by status">Appointment status chart.</canvas></div><p class="chart-insight">Status counts give a quick snapshot of the fictional schedule.</p></article>
+    </section>
+    <p class="page-disclaimer">Demonstration only. Analytics are calculated in your browser from sample appointments and are not medical, operational, or business advice.</p>
+  </main>
+  <footer class="site-footer"><div class="shell footer-main">
+    <a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M18 29V14m0 8c-7 0-11-4-11-11 7 0 11 4 11 11Zm0-5c0-7 4-11 11-11 0 7-4 11-11 11Z"/></svg></span><span class="brand-copy"><strong>Bloom Medical</strong><small>Care That Grows With You.</small></span></a>
+    <p>A fictional clinic website created for an academic assignment.<br>Demonstration only — not medical advice or a real care provider.</p>
+    <div class="footer-nav"><a href="aboutus.html">About this project</a><a href="appointments.html">Appointment demo</a><a href="analytics.html">Sample analytics</a></div>
+  </div><div class="shell footer-bottom"><span>© <span data-current-year>2026</span> Bloom Medical · Academic demonstration</span><span>Made with care, for learning.</span></div></footer>
+</body>
+</html>

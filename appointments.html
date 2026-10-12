@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f0">
+  <meta name="description" content="Manage fictional appointments in the Bloom Medical static academic demonstration.">
+  <title>Appointment Manager | Bloom Medical</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+  <script src="appointments.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="nav shell" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="Bloom Medical home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M18 29V14m0 8c-7 0-11-4-11-11 7 0 11 4 11 11Zm0-5c0-7 4-11 11-11 0 7-4 11-11 11Z"/></svg></span><span class="brand-copy"><strong>Bloom Medical</strong><small>Care That Grows With You.</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-links" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="primary-links"><a href="index.html">Home</a><a href="aboutus.html">About</a><a href="appointments.html" aria-current="page">Appointments</a><a href="analytics.html">Analytics</a><a class="button button-small" href="appointments.html">Manage appointments <span aria-hidden="true">↗</span></a></div>
+  </nav></header>
+  <main id="main" class="dashboard-main shell">
+    <section class="dashboard-heading"><div><p class="eyebrow">Bloom Medical · Demo workspace</p><h1>Appointment <em>manager.</em></h1><p>Keep the little details in one calm, organized place.</p></div><a class="button button-outline" href="analytics.html">View analytics <span aria-hidden="true">↗</span></a></section>
+    <div class="demo-alert" role="note"><span class="alert-mark" aria-hidden="true">!</span><p><strong>Demonstration data only — no real patient information.</strong><br>This academic prototype stores fictional examples in this browser only. Do not enter real patient information.</p></div>
+    <section class="metric-grid" aria-label="Appointment summary">
+      <article class="metric-card"><span class="metric-icon metric-sage" aria-hidden="true">✳</span><div><span class="metric-label">Total appointments</span><strong id="metric-total">—</strong></div><small>All demo records</small></article>
+      <article class="metric-card"><span class="metric-icon metric-blue" aria-hidden="true">◷</span><div><span class="metric-label">Upcoming</span><strong id="metric-upcoming">—</strong></div><small>Not cancelled</small></article>
+      <article class="metric-card"><span class="metric-icon metric-rose" aria-hidden="true">♡</span><div><span class="metric-label">Departments</span><strong id="metric-departments">—</strong></div><small>Across the clinic</small></article>
+    </section>
+    <div class="manager-layout">
+      <section class="form-panel" aria-labelledby="form-title">
+        <div class="panel-heading"><span class="panel-step">01</span><div><p class="eyebrow">Appointment details</p><h2 id="form-title">Add an appointment</h2></div></div>
+        <p class="form-intro">Enter fictional details to add a sample record to your demo.</p>
+        <form id="appointment-form">
+          <input type="hidden" id="appointment-id">
+          <div class="field"><label for="patient-name">Patient name <span aria-hidden="true">*</span></label><input id="patient-name" name="patientName" type="text" autocomplete="off" maxlength="80" placeholder="e.g. Jordan Lee" required aria-describedby="patient-hint"><small id="patient-hint">Use a fictional name only.</small></div>
+          <div class="form-two-col">
+            <div class="field"><label for="appointment-date">Date <span aria-hidden="true">*</span></label><input id="appointment-date" name="date" type="date" required></div>
+            <div class="field"><label for="appointment-time">Time <span aria-hidden="true">*</span></label><input id="appointment-time" name="time" type="time" required></div>
+          </div>
+          <div class="field"><label for="department">Department <span aria-hidden="true">*</span></label><select id="department" name="department" required><option value="">Choose a department</option><option>Primary Care</option><option>Preventive Care</option><option>Women's Health</option><option>Wellness</option></select></div>
+          <div class="form-two-col">
+            <div class="field"><label for="visit-type">Visit type <span aria-hidden="true">*</span></label><select id="visit-type" name="visitType" required><option value="">Choose type</option><option>In person</option><option>Telehealth</option><option>Follow-up</option></select></div>
+            <div class="field"><label for="status">Status <span aria-hidden="true">*</span></label><select id="status" name="status" required><option value="Scheduled">Scheduled</option><option value="Checked in">Checked in</option><option value="Completed">Completed</option><option value="Cancelled">Cancelled</option></select></div>
+          </div>
+          <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+          <div class="form-actions"><button class="button" id="submit-appointment" type="submit">Add appointment <span aria-hidden="true">+</span></button><button class="button button-quiet" id="cancel-edit" type="button" hidden>Cancel edit</button></div>
+        </form>
+      </section>
+
+      <section class="records-panel" aria-labelledby="records-title">
+        <div class="records-heading"><div><p class="eyebrow">Your demo schedule</p><h2 id="records-title">Appointments</h2></div><button class="button button-quiet reset-button" id="reset-demo" type="button">↺ Reset demo data</button></div>
+        <div class="record-controls">
+          <div class="search-field"><label class="sr-only" for="appointment-search">Search appointments</label><span aria-hidden="true">⌕</span><input id="appointment-search" type="search" placeholder="Search by patient or department"></div>
+          <div class="filter-field"><label class="sr-only" for="status-filter">Filter by status</label><select id="status-filter"><option value="">All statuses</option><option>Scheduled</option><option>Checked in</option><option>Completed</option><option>Cancelled</option></select></div>
+        </div>
+        <div class="records-summary" aria-live="polite"><span id="result-count">Loading appointments…</span><span class="fictional-label"><i></i> Fictional records</span></div>
+        <div class="table-scroll">
+          <table class="appointments-table">
+            <thead><tr><th scope="col">Patient</th><th scope="col">Date &amp; time</th><th scope="col">Department</th><th scope="col">Visit type</th><th scope="col">Status</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+            <tbody id="appointment-rows"></tbody>
+          </table>
+          <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">✳</span><h3>No appointments found</h3><p>Try another search or add a new fictional appointment.</p></div>
+          <p class="table-error" id="storage-error" role="alert" hidden></p>
+        </div>
+      </section>
+    </div>
+    <p class="page-disclaimer">This is a static academic demonstration. No real patient information should be entered. Data is saved only in this browser's local storage.</p>
+  </main>
+  <footer class="site-footer"><div class="shell footer-main">
+    <a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M18 29V14m0 8c-7 0-11-4-11-11 7 0 11 4 11 11Zm0-5c0-7 4-11 11-11 0 7-4 11-11 11Z"/></svg></span><span class="brand-copy"><strong>Bloom Medical</strong><small>Care That Grows With You.</small></span></a>
+    <p>A fictional clinic website created for an academic assignment.<br>Demonstration only — not medical advice or a real care provider.</p>
+    <div class="footer-nav"><a href="aboutus.html">About this project</a><a href="appointments.html">Appointment demo</a><a href="analytics.html">Sample analytics</a></div>
+  </div><div class="shell footer-bottom"><span>© <span data-current-year>2026</span> Bloom Medical · Academic demonstration</span><span>Made with care, for learning.</span></div></footer>
+</body>
+</html>
